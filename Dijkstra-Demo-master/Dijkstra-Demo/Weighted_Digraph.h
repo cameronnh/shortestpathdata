@@ -12,7 +12,7 @@ class Weighted_Digraph
 private:
 	std::vector<std::vector<int>> adjacencies;
 	std::vector<int> shortestPaths;	
-	std::vector<int> parents;
+	std::vector<std::string> parents;
 	std::queue<int> remaining;
 	void clearPaths();	
 	void printPath();
