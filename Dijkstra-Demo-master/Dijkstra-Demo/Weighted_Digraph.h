@@ -15,7 +15,7 @@ private:
 	std::vector<std::string> parents;
 	std::queue<int> remaining;
 	void clearPaths();	
-	void printPath();
+	void printPath(int i);
 public:
 	Weighted_Digraph();
 	~Weighted_Digraph();

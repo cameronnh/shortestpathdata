@@ -5,6 +5,7 @@
 
 #include "Weighted_Digraph.h"
 #include<iostream>
+#include<string>
 
 Weighted_Digraph::Weighted_Digraph() {};
 Weighted_Digraph::~Weighted_Digraph() {};
@@ -26,7 +27,9 @@ std::vector<int> Weighted_Digraph::calculateDistances(int start){
 			}
 			else{				
 				shortestPaths.at(i) = shortestPaths.at(next) + adjacencies[next][i];
-				parents.at(i) = parents.at(next) + "->i";
+				//parents.at(i) = parents.at(next) + "->i";
+				char c = i;
+				parents.at(i) = parents.at(next) + c;
 				remaining.emplace(i);
 			}
 		}
@@ -66,23 +69,19 @@ void Weighted_Digraph::loadGraph(std::string path) {
 
 void Weighted_Digraph::printSolution() {
 	int src = 0;
+	int temp = 0;
 	printf("Vertex\t\tPath");
 	for (int i : calculateDistances(0)) {
 		printf("\n%d -> %d \t\t",
 			src, i);
 		
-		printPath();
+		printPath(temp);
+		temp++;
 	}		
 }
 
-void Weighted_Digraph::printPath()
-{
-	for (int i = 0; i < parents.size(); i++) {
-		std::cout << parents.at(i);
-		//printf("%s ", parents.at(i));		
-	}
-	
-	while (parents.size()) {
-		parents.pop_back();
-	}
+void Weighted_Digraph::printPath(int temp)
+{	
+	printf("%d", temp);
+	//std::cout << parents.at(temp);		
 }
