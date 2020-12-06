@@ -4,6 +4,7 @@
 
 
 #include "Weighted_Digraph.h"
+#include<iostream>
 
 Weighted_Digraph::Weighted_Digraph() {};
 Weighted_Digraph::~Weighted_Digraph() {};
@@ -77,7 +78,8 @@ void Weighted_Digraph::printSolution() {
 void Weighted_Digraph::printPath()
 {
 	for (int i = 0; i < parents.size(); i++) {
-		printf("%d ", parents.at(i));		
+		std::cout << parents.at(i);
+		//printf("%s ", parents.at(i));		
 	}
 	
 	while (parents.size()) {
