@@ -10,10 +10,4 @@ int main()
 	Weighted_Digraph digraph;
 	digraph.loadGraph("matrix.txt");
 	digraph.printSolution();
-
-	//for (int i : digraph.calculateDistances(0)) {
-	//	std::cout << i << "\t";
-	//}
-	std::cout << std::endl;
 }
-
