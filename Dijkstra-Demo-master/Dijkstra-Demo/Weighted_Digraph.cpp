@@ -26,9 +26,8 @@ std::vector<int> Weighted_Digraph::calculateDistances(int start){
 				continue;
 			}
 			else{				
-				shortestPaths.at(i) = shortestPaths.at(next) + adjacencies[next][i];
-				//parents.at(i) = parents.at(next) + "->'"+i+"'";
-				char c = i;								
+				shortestPaths.at(i) = shortestPaths.at(next) + adjacencies[next][i];				
+				std::string c = std::to_string(i);
 				parents.at(i) = parents.at(next) + "->'"+c+"'";
 				remaining.emplace(i);
 			}
@@ -81,7 +80,6 @@ void Weighted_Digraph::printSolution() {
 }
 
 void Weighted_Digraph::printPath(int temp)
-{	
-	//printf("%d", temp);
+{		
 	std::cout << parents.at(temp);		
 }
