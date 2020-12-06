@@ -69,9 +69,9 @@ void Weighted_Digraph::loadGraph(std::string path) {
 void Weighted_Digraph::printSolution() {
 	int src = 0;
 	int temp = 0;
-	printf("Vertex\t\tPath");
+	printf("Vertex\tdist.\tPath");
 	for (int i : calculateDistances(0)) {
-		printf("\n%d -> %d \t\t",
+		printf("\n%d\t%d \t",
 			src, i);
 		
 		printPath(temp);
